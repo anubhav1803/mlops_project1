@@ -12,7 +12,7 @@ mlflow.set_experiment("Final_Model")
 # Set the tracking URI for MLflow to log the experiment in DagsHub
 mlflow.set_tracking_uri("https://dagshub.com/anubhav1803/mlops_project1.mlflow") 
 # Load the run ID and model name from the saved JSON file
-reports_path = "reports/run_info.json"
+reports_path = "C:\\Users\\anubhcha\\OneDrive - Capgemini\\Desktop\\JN\\mlflow\\mlops_project\\reports\\run_info.json"
 with open(reports_path, 'r') as file:
     run_info = json.load(file)
 
@@ -25,7 +25,7 @@ print("Artifacts:")
 for a in client.list_artifacts(run_id):
     print(a.path)
 # Create the model URI
-model_uri = f"runs:/{run_id}/{model_name}"
+model_uri = f"runs:/{run_id}/artifacts/{model_name}"
 print("Run ID:", run_id)
 print("Model Name:", model_name)
 print("Model URI:", model_uri)
